@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './PlaceOrder.css';
 import { StoreContext } from '../../context/Storecontext';
 import { assets } from '../../assets/assets';
+import qrisImage from '/qris.jpg';
 
 const PlaceOrder = () => {
   const { getTotalCartAmount } = useContext(StoreContext);
@@ -58,7 +59,7 @@ const PlaceOrder = () => {
       {showQRIS && (
         <div className='qris-modal'>
           <div className='qris-content'>
-            <img src="/qris.jpg" alt="kode qris" />
+          <img src={qrisImage} alt="kode qris" />
             <p>Bayar menggunakan kode QRIS ini.</p>
             <button className='close-button' onClick={() => setShowQRIS(false)}>
               &times;
